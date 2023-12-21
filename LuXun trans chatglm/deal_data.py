@@ -3,6 +3,7 @@ from tqdm import tqdm
 
 import datasets
 import transformers
+from modelscope import snapshot_download
 
 
 def preprocess(tokenizer, config, example, max_seq_length):
@@ -16,6 +17,7 @@ def preprocess(tokenizer, config, example, max_seq_length):
 
 def read_jsonl(path, max_seq_length, skip_overlength=False):
     model_name = "ZhipuAI/chatglm3-6b"
+    # model_dir = snapshot_download(model_name, revision = "v1.0.0")
     tokenizer = transformers.AutoTokenizer.from_pretrained(
         model_name, trust_remote_code=True)
     config = transformers.AutoConfig.from_pretrained(
