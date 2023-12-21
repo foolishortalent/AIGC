@@ -1,0 +1,16 @@
+# int8
+bitsandbytes
+accelerate
+
+# chatglm
+modelscope
+protobuf
+transformers
+icetk
+cpm_kernels
+
+torch
+
+# 
+datasets
+peft>=0.7.1
